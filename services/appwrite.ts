@@ -17,7 +17,6 @@ export const updateSearchCount = async (query: string, movie: Movie ) => {
         const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
             Query.equal('searchTerm', query)
         ])
-        console.log("result:",result)
         //check if a record of that search has already been stored
         if (result.documents.length > 0) {
             const existingMovie = result.documents[0];

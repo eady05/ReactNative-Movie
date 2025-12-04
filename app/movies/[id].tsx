@@ -46,11 +46,13 @@ const MovieDetails  = () => {
                         <Text className="text-light-200 text-sm">({movie?.vote_count} votes)</Text>
                     </View>
                     <MovieInfo label="Overview" value={movie?.overview}/>
+                    <MovieInfo label="Release date" value={movie?.release_date}/>
                     <MovieInfo label="Genres" value={movie?.genres?.map((g)=>g.name).join('-') || 'N/A'} />
                     <View className="flex flex-row justify-between w-1/2">
                         <MovieInfo label="Budget" value={`$${(movie?.budget ?? 0) / 1_000_000} million`}/>
                         <MovieInfo label="Revenue" value={`$${Math.round ((movie?.revenue ?? 0))/1_000_000}`}/>
                     </View>
+                    <MovieInfo label="Tagline" value={movie?.tagline}/>
                     <MovieInfo label="Production Companies" value={movie?.production_companies.map((c)=>c.name).join('-') || 'N/A'} />
                 </View>
             </ScrollView>
